@@ -1,0 +1,512 @@
+ym=mean(data14$Y)
+ym=mean(data14$Y)
+temp1=0
+temp2=0
+for(i in 1:length(data14)){
+temp1=temp1+(h[i]-ym)^2
+temp2=temp2+(hi[i]-ym)^2
+}
+anss=temp2/temp1
+anss
+summary(mod1)
+anss=temp2/temp1
+anss
+for(i in 1:5){
+temp1=temp1+(h[i]-ym)^2
+temp2=temp2+(hi[i]-ym)^2
+}
+anss=temp2/temp1
+anss
+data14=data.frame(X=g,Y=h)
+mod1=lm(Y~X,data=data14)
+summary(mod1)
+hi=predict(mod1,data14)
+ym=mean(data14$Y)
+temp1=0
+temp2=0
+for(i in 1:5){
+temp1=temp1+(h[i]-ym)^2
+temp2=temp2+(hi[i]-ym)^2
+}
+anss=temp2/temp1
+anss
+volnew=predict(m4,tree[,1:2])
+yme=mean(tree$Volume)
+temp11=0
+temp22=0
+temp11=temp11+(tree$Volume[i]-yme)^2
+for(i in 1:5){
+temp11=temp11+(tree$Volume[i]-yme)^2
+temp22=temp22+(volnew[i]-yme)^2
+}
+anss1=temp22/temp11
+anss1
+summary(m4)
+data12['Volume']=NULL
+vol1=predict(m1,newdata = tree)
+vol2=predict(m2,newdata = tree)
+vol3=predict(m3,newdata = tree)
+vol4=predict(m4,newdata = tree)
+vol1=predict(m1,newdata = tree)
+vol2=predict(m2,newdata = tree)
+vol3=predict(m3,newdata = tree)
+plot(vol1,type = "l")
+lines(vol1,type = "l",col="red")
+lines(vol2,type = "l",col="red")
+lines(vol3,type = "l",col="red")
+lines(vol4,type = "l",col="red")
+plot(vol1,type = "l")
+lines(vol1,type = "l",col="red")
+lines(vol2,type = "l",col="green")
+lines(vol3,type = "l",col="blue")
+lines(vol4,type = "l",col="black")
+summary(m2)
+install.packages("mlbench")
+library("mlbench", lib.loc="~/R/win-library/3.5")
+data("BreastCancer")
+dat=BreastCancer
+View(dat)
+summary(dat)
+cls=c()
+cls=cls+12
+cls=c(dat$Class)
+print(cls)
+dat$Class=cls
+summary(dat)
+cls
+str(dat)
+dat$Class=as.factor(cls)
+str(dat)
+glm(Class~Cl.thickness,data=dat,family = "binomial")
+pairs.panels(dat1[,1:11])
+library("psych", lib.loc="~/R/win-library/3.5")
+pairs.panels(dat1[,1:11])
+pairs.panels(dat[,1:11])
+str(dat)
+glm(Class~Cell.size,data=dat,family = "binomial")
+m1=glm(Class~Cell.size,data=dat,family = "binomial")
+pe=predict(m1,dat)
+pe
+pe=predict.glm(m1,dat)
+pe
+p1=dat[1,]
+pe=predict.glm(m1,p1)
+pe
+as.factor(pe)
+data("BreastCancer")
+dat=BreastCancer
+summary(dat)
+dat$Class=as.factor(c(dat$Class))
+str(dat)
+dat$Class=ifelse(dat$Class=="malignant",1,0)
+data("BreastCancer")
+dat=BreastCancer
+dat$Class=ifelse(dat$Class=="malignant",1,0)
+str(dat)
+a=ifelse(dat$Class=="malignant",1,0)
+data("BreastCancer")
+dat=BreastCancer
+dat$Class=as.factor(ifelse(dat$Class=="malignant",1,0))
+str(dat)
+data("BreastCancer")
+dat=BreastCancer
+dat$Class=ifelse(dat$Class=="malignant",1,0)
+a=ifelse(dat$Class=="malignant",1,0)
+dat$Class=as.factor(a)
+str(dat)
+data("BreastCancer")
+dat=BreastCancer
+a=ifelse(dat$Class=="malignant",1,0)
+dat$Class=as.factor(a)
+dat$Class
+summary(m1)
+str(dat)
+m1=glm(Class~as.vector(Cell.size),data=dat,family = "binomial")
+summary(m1)
+str(dat)
+m1=glm(Class~as.integer(Cell.size),data=dat,family = "binomial")
+summary(m1)
+m1=glm(Class~as.integer(as.character(Cell.size)),data=dat,family = "binomial")
+summary(m1)
+str(dat)
+dat=dat[,-1]
+str(dat)
+for (i in 1:9) {
+dat[,i]=as.integer(as.character(dat[,i]))
+}
+str(dat)
+summary(m1)
+m1=glm(Class~Cell.size,data=dat,family = "binomial")
+summary(m1)
+p1=dat[1,]
+pe=predict.glm(m1,p1)
+pe=predict.glm(m1,p1)
+print(pe)
+m1=glm(Class~.,data=dat,family = "binomial")
+summary(m1)
+p1=dat[1,]
+p1=dat[1,2:]
+p1=dat[1,]
+m1=glm(Class~.,data=dat,family = "binomial")
+summary(m1)
+p1=dat[1,]
+p1=dat[1,]
+pe=predict(m1,data=p1[2,],type="response")
+print(pe)
+p1=dat[,-10]
+pe=predict(m1,data=p1,type="response")
+pe=round(pe)
+t=table(dat$Class,pe)
+p1=dat
+p1=p1[,-10]
+pe=predict(m1,data=p1,type="response")
+pe=round(pe)
+pe=round(pe)
+pe=predict(m1,data=p1,type="response")
+p1=dat
+p1$Class=NULL
+pe=predict(m1,data=p1,type="response")
+pe=round(pe)
+View(p1)
+t=table(dat$Class[1:683],pe)
+t
+pe=predict(m1,p1,type="response")
+pe=round(pe)
+pe=predict(m1,p1,type="response")
+pe=round(pe)
+t=table(dat$Class,pe)
+t
+summary(dat)
+summary(dat)
+summary(BreastCancer)
+t
+434/458
+a=summary(BreastCancer)
+demo=summary(BreastCancer)
+demo
+demo[11,1]
+demo[1,11]
+as.integer(demo[1,11])
+acc= gsub("[^0-9.]", "",  demo[1:11])
+acc= gsub("[^[:digit:].]", "",  demo[1,11])
+acc2=gsub("[^[:digit:].]", "",  demo[2,11])
+acc1=(t[1,1]/acc1)*100
+acc2=(t[2,2]/acc2)*100
+acc1=(t[1,1]/acc1)*100
+acc1= gsub("[^[:digit:].]", "",  demo[1,11])
+acc2=gsub("[^[:digit:].]", "",  demo[2,11])
+acc1=(t[1,1]/acc1)*100
+acc1=(t[1,1]/as.integer(acc1))*100
+acc2=(t[2,2]/as.integer(acc2))*100
+acc1
+acc2
+data("BreastCancer")
+dat1=BreastCancer
+ss=sample(2,nrow(dat1),replace = T,prob = c(0.8,0.2))
+tr=dat1[ss==1]
+ts=dat1[ss==2]
+tr=dat1[ss==1,]
+ts=dat1[ss==2,]
+tr=dat1[ss==1,]
+ts=dat1[ss==2,]
+tr=dat[ss==1,]
+ts=dat[ss==2,]
+ss=sample(2,nrow(dat),replace = T,prob = c(0.8,0.2))
+tr=dat[ss==1,]
+ts=dat[ss==2,]
+summary(tr)
+m2=glm(Class~.,data=dat,family = "binomial")
+m2=glm(Class~.,data=tr,family = "binomial")
+m2=glm(Class~.,data=tr,family = "binomial")
+pre=predict(m2,ts,type="response")
+pre=round(pre)
+print(pre)
+t=table(tr$Class,pe)
+t1=table(ts$Class,pe)
+pre=predict(m2,ts,type="response")
+pre=round(pre)
+t1=table(ts$Class,pe)
+aa=ts$Class
+aa=ts$Class
+t1=table(as.vector(ts$Class),pe)
+aa=as.vector(as.character(ts$Class))
+aa=as.vector(as.character(ts$Class))
+t1=table(aa,pe)
+aa=as.vector(as.character(ts$Class))
+aa=as.vector(as.integer(ts$Class))
+aa=as.vector(as.integer(as.character(ts$Class)))
+t1=table(aa,pe)
+aa=as.vector(as.integer(as.character(ts$Class)))
+t1=table(aa,as.vector(as.integer(as.character(pe))))
+aa=as.vector(as.integer(as.character(ts$Class)))
+t1=table(aa,pre)
+t1
+summary(tr)
+table(ts$Class)
+tab=table(ts$Class)
+t1
+accur1=(t1[1,1]/t1[1,1]+t1[2,1])*100
+accur2=(t1[2,2]/t1[2,2]+t1[1,2])*100
+accur1
+accur1=(t1[1,1]/(t1[1,1]+t1[2,1]))*100
+accur1
+accur2
+accur2=(t1[2,2]/(t1[2,2]+t1[1,2]))*100
+accur2=(t1[2,2]/(t1[2,2]+t1[1,2]))*100
+accur2
+accur1
+round(accur1)
+round(accur2)
+accur1=(t1[1,1]/(t1[1,1]+t1[2,1]))*100
+accur2=(t1[2,2]/(t1[2,2]+t1[1,2]))*100
+accur1
+accur1
+accur2
+set.seed(200)
+mat1=matrix(c(1:6), nrow = 4, ncol = 2)
+mat1=matrix(c(1:4), nrow = 2, ncol = 2)
+mat1[1,1]=accur1
+mat1[1,2]=100-accur1
+mat1[2,1]=accur2
+mat1[2,2]=100-accur2
+barplot(mat1,beside = T,xlab = "Models",ylim = c(0,120),col = rainbow(4),ylab = "Accuracy Of Model on Unknown Data",names.arg = c("Benign","Malignant"))
+barplot(mat1,beside = T,xlab = "Models",ylim = c(0,120),col = rainbow(4),ylab = "Accuracy Of Model on Unknown Data",names.arg = c("Benign","Malignant"))
+mat1=matrix(c(1:4), nrow = 2, ncol = 2)
+mat1[1,1]=accur1
+mat1[1,2]=accur2
+mat1[2,1]=100-accur1
+mat1[2,2]=100-accur2
+barplot(mat1,beside = T,xlab = "Models",ylim = c(0,120),col = rainbow(4),ylab = "Accuracy Of Model on Unknown Data",names.arg = c("Benign","Malignant"))
+barplot(mat1,beside = T,xlab = "Models",ylim = c(0,120),col=c("Green","red"),ylab = "Accuracy Of Model on Unknown Data",names.arg = c("Benign","Malignant"))
+install.packages("devtools")
+library("devtools")
+install_github("vqv/ggbiplot")
+library(devtools)
+library(git2r)
+git2r::fetch("vqv/ggbiplot")
+install.packages("dplyr")
+library("devtools")
+install_github("vqv/ggbiplot")
+library(devtools)
+install.packages("devtools")
+View(dat)
+library(randomForest)
+getwd()
+setwd("R/Machine_Learning/mini-Project/")
+data <- read.csv("wbcd.csv")
+data <- read.csv("wbcd.csv")
+str(data)
+data$diagnosis <- as.factor(data$diagnosis)
+table(data$NSP)
+table(data$diagnosis)
+data$id=NULL
+set.seed(123)
+ind <- sample(2, nrow(data), replace = TRUE, prob = c(0.8, 0.2))
+train <- data[ind==1,]
+test <- data[ind==2,]
+library(randomForest)
+set.seed(222)
+library(randomForest)
+rf <- randomForest(diagnosis~., data=train)
+t=rf$confusion[,-4]
+1-sum(diag(t))/sum(t)
+plot(rf)
+rf
+tuneRF(data[,1],data[,2:31],stepFactor = 0.5)
+rf <- randomForest(diagnosis~., data=train,ntree=560)
+plot(rf)
+rf <- randomForest(diagnosis~., data=train,ntree=250)
+plot(rf)
+rf <- randomForest(diagnosis~., data=train)
+plot(rf)
+rf <- randomForest(diagnosis~., data=train,importance = TRUE)
+print(rf)
+attributes(rf)
+library(caret)
+install.packages("caret")
+library(caret)
+p1 <- predict(rf, train)
+t1=table(p1, train$diagnosis)
+acc1=sum(diag(t1))/sum(t1)
+acc1
+p2 <- predict(rf, test)
+confusionMatrix(p2, test$diagnosis)
+t2 = table(p2, test$diagnosis)
+acc2=sum(diag(t2))/sum(t2)
+acc2
+p3 <- predict(rf1, test)
+rf2 <- randomForest(diagnosis~., data=train,
+ntree = 1,
+mtry = 1,
+importance = TRUE,
+proximity = TRUE)
+p4 <- predict(rf2, test)
+t4 = table(p4, test$NSP)
+t4 = table(p4, test$diagnosis)
+acc4=sum(diag(t4))/sum(t4)
+acc4
+plot(rf2)
+hist(treesize(rf),
+main = "No. of Nodes for the Trees",
+col = "green")
+varImpPlot(rf,
+sort = T,
+n.var = 10,
+main = "Top 10 - Variable Importance")
+importance(rf)
+varUsed(rf)
+head(data)
+library(naivebayes)
+?naive_bayes()
+m1=naive_bayes(diagnosis~area_worst+perimeter_worst+radius_worst+points_mean+points_worst+perimeter_mean+radius_mean+area_mean+concavity_mean+area_se,data = train)
+plot(m1)
+y1=predict(m1,train)
+table(train$diagnosis)
+table(y1)
+plot(m1, which = c("area_worst", "perimeter_worst"), ask = TRUE)
+plot(m1, which = c("area_worst", "perimeter_worst"), ask = TRUE)
+plot(m1, which = c("area_worst", "perimeter_worst"), ask = TRUE)
+pred=predict(m1,test)
+table(test$diagnosis)
+table(pred)
+m1
+acc1
+acc2
+acc4
+acc4
+confusionMatrix(p2, test$diagnosis)
+acc1
+acc1
+acc2
+acc4
+table(train$diagnosis)
+table(y1)
+table(test$diagnosis)
+table(pred)
+table(test$diagnosis)
+tab1=table(test$diagnosis)
+tab2=table(pred)
+tab1[2]
+tab1[2,1]
+abc=gsub('.*-([0-9]+).*','\\1',tab1[2])
+tab1=table(test$diagnosis)
+tab2=table(pred)
+tab1
+tab2
+accmain=as.integer(gsub('.*-([0-9]+).*','\\1',tab2[1]))-as.integer(gsub('.*-([0-9]+).*','\\1',tab1[1]))
+76/73
+73/76
+3/73
+accur=100-(accmain/as.integer(gsub('.*-([0-9]+).*','\\1',tab1[1]))*100)
+accur
+vv=c(acc2*100,acc4*100,accur)
+print(vv)
+plot(vv)
+barplot(vect)
+barplot(vv)
+barplot(vv,density =TRUE,col = rainbow(length(18)))
+?barplot()
+barplot(vv,ylim = 120,xlab ="Accuracy Of Model",ylab = "Accuracy of Models",names.arg = c("Random Forest1","Random Forest2","Classifiers_Acc"))
+barplot(vv,ylim = 110,xlab ="Accuracy Of Model",ylab = "Accuracy of Models",names.arg = c("Random Forest1","Random Forest2","Classifiers_Acc"))
+?barplot()
+barplot(vv,ylim = 110,xlab ="Accuracy Of Model",ylab = "Accuracy of Models",names.arg = c("Random Forest1","Random Forest2","Classifiers_Acc"))
+barplot(vv,ylim = 110,xlab ="Accuracy Of Model",ylab = "Accuracy of Models",names.arg = c("Random Forest1","Random Forest2","Classifiers_Acc"))
+barplot(vv,ylim = c(0,120),xlab ="Accuracy Of Model",ylab = "Accuracy of Models",names.arg = c("Random Forest1","Random Forest2","Classifiers_Acc"))
+barplot(vv,ylim = c(0,120),xlab ="Accuracy Of Model",ylab = "Accuracy of Models",names.arg = c("Random Forest1","Random Forest2","Classifiers_Acc"),col = c('red','blue','green'))
+diag(t2)
+t2
+tyy = table(pred, test$diagnosis)
+accc=sum(diag(tyy))/sum(tyy)
+accc=sum(diag(tyy))/sum(tyy)*100
+accc=sum(diag(tyy))/sum(tyy)*100
+vv=c(acc2*100,acc4*100,accc)
+print(vv)
+data <- read.csv("wbcd.csv")
+data$id=NULL
+str(data)
+data$diagnosis <- as.factor(data$diagnosis)
+table(data$diagnosis)
+ind <- sample(2, nrow(data), replace = TRUE, prob = c(0.8, 0.2))
+train <- data[ind==1,]
+test <- data[ind==2,]
+library(randomForest)
+rf <- randomForest(diagnosis~., data=train,importance = TRUE)
+plot(rf)
+p1 <- predict(rf, train)
+t1=table(p1, train$diagnosis)
+acc1=sum(diag(t1))/sum(t1)
+acc1
+p2 <- predict(rf, test)
+confusionMatrix(p2, test$diagnosis)
+t2 = table(p2, test$diagnosis)
+acc2=sum(diag(t2))/sum(t2)
+acc2
+rf2 <- randomForest(diagnosis~., data=train,
+ntree = 1,
+mtry = 1,
+importance = TRUE,
+proximity = TRUE)
+?randomForest()
+rf2 <- randomForest(diagnosis~., data=train,
+ntree = 1,
+mtry = 1)
+p4 <- predict(rf2, test)
+t4 = table(p4, test$diagnosis)
+acc4=sum(diag(t4))/sum(t4)
+acc4
+?varImpPlot()
+?naive_bayes()
+data <- read.csv("wbcd.csv")
+data$id=NULL
+str(data)
+data$diagnosis <- as.factor(data$diagnosis)
+table(data$diagnosis)
+rf <- randomForest(diagnosis~., data=train,importance = TRUE)
+plot(rf)
+data$diagnosis <- as.factor(data$diagnosis)
+table(data$diagnosis)
+data$diagnosis <- as.factor(data$diagnosis)
+table(data$diagnosis)
+ind <- sample(2, nrow(data), replace = TRUE, prob = c(0.8, 0.2))
+train <- data[ind==1,]
+test <- data[ind==2,]
+library(randomForest)
+rf <- randomForest(diagnosis~., data=train,importance = TRUE)
+plot(rf)
+plot(rf)
+View(data)
+plot(rf)
+p1 <- predict(rf, train)
+t1=table(p1, train$diagnosis)
+acc1
+acc1=sum(diag(t1))/sum(t1)
+acc1
+p2 <- predict(rf, test)
+p2 <- predict(rf, test)
+t2 = table(p2, test$diagnosis)
+acc2=sum(diag(t2))/sum(t2)
+acc2
+rf2 <- randomForest(diagnosis~., data=train,
+ntree = 1,
+mtry = 1)
+p4 <- predict(rf2, test)
+t4 = table(p4, test$diagnosis)
+acc4=sum(diag(t4))/sum(t4)
+acc4
+varImpPlot(rf,
+sort = T,
+n.var = 10,
+main = "Top 10 - Variable Importance")
+m1=naive_bayes(diagnosis~area_worst+perimeter_worst+radius_worst+points_mean+points_worst+perimeter_mean+radius_mean+area_mean+concavity_mean+area_se,data = train)
+plot(m1)
+y1=predict(m1,train)
+table(train$diagnosis)
+table(y1)
+pred=predict(m1,test)
+tab1=table(test$diagnosis)
+tab2=table(pred)
+tyy = table(pred, test$diagnosis)
+accc=sum(diag(tyy))/sum(tyy)*100
+accc
+vv=c(acc2*100,acc4*100,accc)
+barplot(vv,ylim = c(0,120),xlab ="Accuracy Of Model",ylab = "Accuracy of Models",names.arg = c("Random Forest1","Random Forest2","Classifiers_Acc"),col = c('red','blue','green'))
